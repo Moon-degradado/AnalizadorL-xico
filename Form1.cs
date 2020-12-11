@@ -43,7 +43,7 @@ namespace Proyecto_del_analizador_léxico
             for (int i = 0; i < lis_toks.Count; i++)
             {
                 Token actual = lis_toks.ElementAt(i);
-                MessageBox.Show("[Lexema:" + actual.getLexema() + ",IdToken: " + actual.getIdToken() + ",Linea: " + actual.getLinea() + "]", "des");
+                MessageBox.Show("[Lexema:" + actual.getLexema() + ",Token: " + actual.getIdToken() + ",Linea: " + actual.getLinea() + "]", "des");
             }
 
 
@@ -81,11 +81,7 @@ namespace Proyecto_del_analizador_léxico
         {
             try
             {
-                //FileStream file = File.Create(path);
-                //pathTH = file.Name;
-                //file.Close();
                 
-                //text_1 = richTextBox1.Controls[];
                 string text = richTextBox1.Text;
                 StreamWriter writer = new StreamWriter(path);
                 writer.Write(text);
@@ -93,8 +89,6 @@ namespace Proyecto_del_analizador_léxico
                 writer.Close();
 
                 string nombre = Path.GetFileNameWithoutExtension(path);
-                //MessageBox.Show(nombre, "nombre");
-                //seleccionado.Text = nombre;
             }
             catch (Exception ex)
             {
@@ -142,14 +136,10 @@ namespace Proyecto_del_analizador_léxico
                 }
                 richTextBox1.Text = texto;
                 streamReader.Close();
-                //MessageBox.Show(nombreC, "nombreC");
-                //MessageBox.Show(ruta1, "ruta1");
 
                 rutas.Clear();
                 Rutas path = new Rutas(ruta1, nombreC);
                 rutas.Add(path);
-
-                //MessageBox.Show(rutas.Count.ToString() , "rutas.Count");
                 Path_actual = ruta1;
                 nombre_acual = nombreC;
                 this.Text = nombre_acual;

@@ -23,7 +23,6 @@ namespace Proyecto_del_analizador_léxico
 
         public Analizador()
         {
-            //this.listaTokens = new List<Token>();
             listaTokens = new List<Token>();
             tokens = new ArrayList();
             tipos = new ArrayList();
@@ -41,15 +40,15 @@ namespace Proyecto_del_analizador_léxico
             Lista_Operaciones = new ArrayList();
             lin_ejecutar = new List<Lineas_Ejecutar>();
             graf_ejecutar = new List<Graficas_Ejecutar>();
-
-            //errores toks
+            // 
+            // Errores Tokens
+            // 
             listaErrores = new List<ErroresToken>();
 
         }
 
         public void addToken(String lexema, String idToken, int linea, int columna, int indice)
         {
-            //MessageBox.Show("*" + lexema + "* lin: " + linea + " col: " + columna, "Lexema_final");
             Token nuevo = new Token(lexema, idToken, linea, columna, indice );
             listaTokens.Add(nuevo);
         }
@@ -67,16 +66,11 @@ namespace Proyecto_del_analizador_léxico
             int fila = 1;
             string lexema = "";
             Char c;
-            //MessageBox.Show(entrada, "111 entrada");
             entrada = entrada + " ";
-            //entrada = entrada;
-            //MessageBox.Show(entrada, "222 entrada");
             for (int i = 0; i < entrada.Length; i++)
             {
                 c = entrada[i];
                 columna++;
-                //MessageBox.Show(c.ToString(), i.ToString() );
-                //MessageBox.Show(estado.ToString(), "estado");
                 switch (estado)
                 {
                     case 0:
@@ -118,8 +112,6 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == '{')
                         {
                             lexema += c;
-                            ////addToken(lexema, "llaveIzq", pos + 1, 0);
-
                             addToken(lexema, "llaveIzq", fila, columna, i - lexema.Length );
                             lexema = "";
                         }
@@ -127,7 +119,6 @@ namespace Proyecto_del_analizador_léxico
                         {
                             lexema += c;
                             addToken(lexema, "llaveDer", fila, columna, i - lexema.Length);
-                            ////addToken(lexema, "llaveDer", pos + 1, 0);
                             lexema = "";
                         }
                         else if (c == '(')
@@ -145,7 +136,6 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == ',')
                         {
                             lexema += c;
-                            //addToken(lexema, "coma", pos + 1, 0);
                             lexema = "";
                         }
 
@@ -208,7 +198,6 @@ namespace Proyecto_del_analizador_léxico
                         /*fin operadors mat*/
                         else
                         {
-                            //addError(c.ToString() , "Desconocido", fila, columna);
                             estado = -99;
                             i--;
                             columna--;
@@ -220,12 +209,10 @@ namespace Proyecto_del_analizador_léxico
                         {
                             lexema += c;
                             estado = 1;
-                            //MessageBox.Show("*1*"+lexema + "*1*", "lexema");
                         }
                         else
                         {
                             Boolean encontrado = false;
-                            /*if (verificarReservada(lexema))*/
                             encontrado = Macht_enReser(lexema);
                             if (encontrado)
                             {
@@ -386,7 +373,6 @@ namespace Proyecto_del_analizador_léxico
         /*reporte de Errores*/
         public void Html_Errores()
         {
-            //MessageBox.Show("Creando archivo html", "entra");
 
             String Contenido_html;
             Contenido_html = "<html>" +
@@ -417,7 +403,7 @@ namespace Proyecto_del_analizador_léxico
             for (int i = 0; i < listaErrores.Count; i++)
             {
                 ErroresToken sen_pos = listaErrores.ElementAt(i);
-                //MessageBox.Show("Token: " + sen_pos.getToken() + "\nLexema: " + sen_pos.getlexema() + "\nlinea: " + sen_pos.getLinea() + "\nColumna: " + sen_pos.getColumna(), i.ToString());
+                
 
                 tempo_tokens = "";
                 tempo_tokens = "<tr>" +
