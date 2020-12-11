@@ -10,18 +10,14 @@ namespace Proyecto_del_analizador_léxico
         String di2;
         String nod2_des;
 
-        
-
         public Nodos_Enlaces(String nod1_or, String punto, String direccion, String di1, String di2, String nod2_des)
         {
-
             this.nod1_or = nod1_or;
             this.punto = punto;
             this.direccion = direccion;
             this.di1 = di1;
             this.di2 = di2;
             this.nod2_des = nod2_des;
-
         }
 
         public String getNod1_or()

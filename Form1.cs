@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_del_analizador_léxico
 {
-    
+
     public partial class Form1 : Form
     {
         static private List<Rutas> rutas;
@@ -43,7 +43,18 @@ namespace Proyecto_del_analizador_léxico
             for (int i = 0; i < lis_toks.Count; i++)
             {
                 Token actual = lis_toks.ElementAt(i);
-                MessageBox.Show("[Lexema:" + actual.getLexema() + ",Token: " + actual.getIdToken() + ",Linea: " + actual.getLinea() + "]", "des");
+                String mensajeRespuesta = null;
+                if (actual.getLexema() != null)
+                {
+                    mensajeRespuesta = "[Lexema: " + actual.getLexema();
+                }
+                if (actual.getIdToken() != null)
+                {
+                    mensajeRespuesta += ", Token: " + actual.getIdToken();
+                }
+                MessageBox.Show(mensajeRespuesta +
+                ", Linea: " + actual.getLinea() +
+                "]", "Listado Tokens");
             }
 
 
@@ -61,7 +72,7 @@ namespace Proyecto_del_analizador_léxico
             for (int i = 0; i < rutas.Count; i++)
             {
                 Rutas ru = rutas.ElementAt(i);
-                if (Path_actual == ru.getPath() )
+                if (Path_actual == ru.getPath())
                 {
                     path = Path_actual;
                     existe = true;
@@ -81,7 +92,7 @@ namespace Proyecto_del_analizador_léxico
         {
             try
             {
-                
+
                 string text = richTextBox1.Text;
                 StreamWriter writer = new StreamWriter(path);
                 writer.Write(text);
@@ -143,7 +154,7 @@ namespace Proyecto_del_analizador_léxico
                 Path_actual = ruta1;
                 nombre_acual = nombreC;
                 this.Text = nombre_acual;
-    
+
             }
 
         }
@@ -151,8 +162,8 @@ namespace Proyecto_del_analizador_léxico
         private void Form1_Load(object sender, EventArgs e)
         {
             b_correr.FlatAppearance.BorderColor = Color.Empty;
-            this.BackColor = Color.FromArgb(55,137,51);
-            menuStrip1.BackColor = Color.FromArgb(55,137,65);
+            this.BackColor = Color.FromArgb(55, 137, 51);
+            menuStrip1.BackColor = Color.FromArgb(55, 137, 65);
             menuStrip1.ForeColor = Color.White;
             button2.BackColor = Color.FromArgb(55, 137, 40);
         }
@@ -164,42 +175,44 @@ namespace Proyecto_del_analizador_léxico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String [] sintaxis;
+            String[] sintaxis;
             String recopilar = richTextBox1.Text;
             sintaxis = recopilar.Split(" ");
             if (richTextBox1.Text != "")
             {
-               if (richTextBox1.SelectionColor == Color.Black)
-               {
+                if (richTextBox1.SelectionColor == Color.Black)
+                {
                     foreach (var palabrasReservadas in sintaxis)
                     {
                         switch (palabrasReservadas)
                         {
-                            case "nose2":case "nose3":
+                            case "nose2":
+                            case "nose3":
                                 HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 232, 198));
                                 button2.Text = "Quitar Color";
                                 break;
                         }
-                        
+
                     }
-               }
-               else
-               {
-                   foreach (var palabrasReservadas in sintaxis)
+                }
+                else
+                {
+                    foreach (var palabrasReservadas in sintaxis)
                     {
                         switch (palabrasReservadas)
                         {
-                            case "nose2":case "nose3":
+                            case "nose2":
+                            case "nose3":
                                 HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 0, 0));
                                 button2.Text = "Colorear Sintaxis";
                                 break;
                         }
                     }
-               }
+                }
             }
             else
             {
-                MessageBox.Show("Ingrese sintaxis","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Ingrese sintaxis", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

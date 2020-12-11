@@ -10,7 +10,6 @@ namespace Proyecto_del_analizador_léxico
 
         public Rutas(string path, String Nombre)
         {
-
             this.path = path;
             this.Nombre = Nombre;
         }

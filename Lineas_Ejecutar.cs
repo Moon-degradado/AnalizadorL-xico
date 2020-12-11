@@ -8,7 +8,7 @@ namespace Proyecto_del_analizador_léxico
         Object lin_senten;
         String cadena_oper;
 
-        public Lineas_Ejecutar(long idToken, String Token_n, Object lin_senten, String cadena_oper )
+        public Lineas_Ejecutar(long idToken, String Token_n, Object lin_senten, String cadena_oper)
         {
 
             this.Token_n = Token_n;

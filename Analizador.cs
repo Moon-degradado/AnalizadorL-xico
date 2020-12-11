@@ -26,7 +26,6 @@ namespace Proyecto_del_analizador_léxico
             listaTokens = new List<Token>();
             tokens = new ArrayList();
             tipos = new ArrayList();
-
             tokens.Add("Resultado");  //0
             tokens.Add("Graficar"); //1
             tokens.Add("Node"); //2
@@ -49,7 +48,7 @@ namespace Proyecto_del_analizador_léxico
 
         public void addToken(String lexema, String idToken, int linea, int columna, int indice)
         {
-            Token nuevo = new Token(lexema, idToken, linea, columna, indice );
+            Token nuevo = new Token(lexema, idToken, linea, columna, indice);
             listaTokens.Add(nuevo);
         }
 
@@ -85,7 +84,7 @@ namespace Proyecto_del_analizador_léxico
                             estado = 2;
                             lexema += c;
                         }
-                        
+
                         else if (c == '"')
                         {
                             estado = 4;
@@ -112,7 +111,7 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == '{')
                         {
                             lexema += c;
-                            addToken(lexema, "llaveIzq", fila, columna, i - lexema.Length );
+                            addToken(lexema, "llaveIzq", fila, columna, i - lexema.Length);
                             lexema = "";
                         }
                         else if (c == '}')
@@ -130,7 +129,7 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == ')')
                         {
                             lexema += c;
-                            addToken(lexema, "parDer", fila, columna, i - lexema.Length );
+                            addToken(lexema, "parDer", fila, columna, i - lexema.Length);
                             lexema = "";
                         }
                         else if (c == ',')
@@ -149,7 +148,7 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == '<')
                         {
                             lexema += c;
-                            addToken(lexema, "Menor", fila, columna , i - lexema.Length);
+                            addToken(lexema, "Menor", fila, columna, i - lexema.Length);
                             lexema = "";
                         }
                         else if (c == '>')
@@ -162,7 +161,7 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == '.')
                         {
                             lexema += c;
-                            addToken(lexema, "Punto", fila, columna, i - lexema.Length );
+                            addToken(lexema, "Punto", fila, columna, i - lexema.Length);
                             lexema = "";
                         }
 
@@ -178,13 +177,13 @@ namespace Proyecto_del_analizador_léxico
                         else if (c == '-')
                         {
                             lexema += c;
-                            addToken(lexema, "Menos", fila, columna, i );
+                            addToken(lexema, "Menos", fila, columna, i);
                             lexema = "";
                         }
                         else if (c == '*')
                         {
                             lexema += c;
-                            addToken(lexema, "Multiplicacion", fila, columna, i );
+                            addToken(lexema, "Multiplicacion", fila, columna, i);
                             lexema = "";
                         }
                         else if (c == '/')
@@ -366,10 +365,7 @@ namespace Proyecto_del_analizador_léxico
             return enco;
         }
         /*verifica si es tipo*/
-  
-        
 
-        
         /*reporte de Errores*/
         public void Html_Errores()
         {
@@ -403,7 +399,7 @@ namespace Proyecto_del_analizador_léxico
             for (int i = 0; i < listaErrores.Count; i++)
             {
                 ErroresToken sen_pos = listaErrores.ElementAt(i);
-                
+
 
                 tempo_tokens = "";
                 tempo_tokens = "<tr>" +
@@ -470,7 +466,7 @@ namespace Proyecto_del_analizador_léxico
             for (int i = 0; i < listaTokens.Count; i++)
             {
                 Token sen_pos = listaTokens.ElementAt(i);
-                
+
                 tempo_tokens = "";
                 tempo_tokens = "<tr>" +
                 "<td><strong>" + (i + 1).ToString() +
@@ -504,16 +500,21 @@ namespace Proyecto_del_analizador_léxico
 
 
         }
-
-    
-
-
         public void generarLista()
         {
             for (int i = 0; i < listaTokens.Count; i++)
             {
                 Token actual = listaTokens.ElementAt(i);
-                retorno += "[Lexema:" + actual.getLexema() + ",IdToken: " + actual.getIdToken() + ",Linea: " + actual.getLinea() + "]" + Environment.NewLine;
+                String mensajeRespuesta = null;
+                if (actual.getLexema() != null)
+                {
+                    mensajeRespuesta = "[Lexema: " + actual.getLexema();
+                }
+                if (actual.getIdToken() != null)
+                {
+                    mensajeRespuesta += ", Token: " + actual.getIdToken();
+                }
+                retorno += mensajeRespuesta + ", Linea: " + actual.getLinea() + "]" + Environment.NewLine;
             }
         }
         public String getRetorno()
@@ -523,7 +524,7 @@ namespace Proyecto_del_analizador_léxico
 
         public List<Token> getListaTokens()
         {
-           return listaTokens;
+            return listaTokens;
         }
     }
 }
