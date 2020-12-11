@@ -164,20 +164,38 @@ namespace Proyecto_del_analizador_léxico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String sintaxis = "";
-            sintaxis = richTextBox1.Text;
+            String [] sintaxis;
+            String recopilar = richTextBox1.Text;
+            sintaxis = recopilar.Split(" ");
             if (richTextBox1.Text != "")
             {
-                if (richTextBox1.SelectionColor == Color.Black && sintaxis == "nose2")
-                {
-                    HighlightPhrase(richTextBox1, sintaxis, Color.FromArgb(0, 232, 198));
-                    button2.Text = "Quitar Color";
-                }
-                else
-                {
-                    HighlightPhrase(richTextBox1, "nose2", Color.FromArgb(0, 0, 0));
-                    button2.Text = "Colorear Sintaxis";
-                }
+               if (richTextBox1.SelectionColor == Color.Black)
+               {
+                    foreach (var palabrasReservadas in sintaxis)
+                    {
+                        switch (palabrasReservadas)
+                        {
+                            case "nose2":case "nose3":
+                                HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 232, 198));
+                                button2.Text = "Quitar Color";
+                                break;
+                        }
+                        
+                    }
+               }
+               else
+               {
+                   foreach (var palabrasReservadas in sintaxis)
+                    {
+                        switch (palabrasReservadas)
+                        {
+                            case "nose2":case "nose3":
+                                HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 0, 0));
+                                button2.Text = "Colorear Sintaxis";
+                                break;
+                        }
+                    }
+               }
             }
             else
             {

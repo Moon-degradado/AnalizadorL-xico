@@ -159,7 +159,6 @@
             this.analizarToolStripMenuItem1.Name = "analizarToolStripMenuItem1";
             this.analizarToolStripMenuItem1.Size = new System.Drawing.Size(141, 24);
             this.analizarToolStripMenuItem1.Text = "Analizar";
-            this.analizarToolStripMenuItem1.Click += new System.EventHandler(this.analizarToolStripMenuItem1_Click);
             // 
             // ayudaToolStripMenuItem
             // 
