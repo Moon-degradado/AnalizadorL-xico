@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Proyecto del analizador léxico/1.0.0": {
+        "runtime": {
+          "Proyecto del analizador léxico.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Proyecto del analizador léxico/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

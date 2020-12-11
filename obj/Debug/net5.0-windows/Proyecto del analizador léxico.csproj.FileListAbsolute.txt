@@ -1,0 +1,19 @@
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\Proyecto del analizador léxico.exe
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\Proyecto del analizador léxico.deps.json
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\Proyecto del analizador léxico.runtimeconfig.json
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\Proyecto del analizador léxico.runtimeconfig.dev.json
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\Proyecto del analizador léxico.dll
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\ref\Proyecto del analizador léxico.dll
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\bin\Debug\net5.0-windows\Proyecto del analizador léxico.pdb
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.csprojAssemblyReference.cache
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.AssemblyInfoInputs.cache
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.AssemblyInfo.cs
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.dll
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\ref\Proyecto del analizador léxico.dll
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.pdb
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.genruntimeconfig.cache
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.csproj.GenerateResource.cache
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto_del_analizador_léxico.Form1.resources
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto_del_analizador_léxico.Properties.Resources.resources
