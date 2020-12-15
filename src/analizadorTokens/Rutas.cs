@@ -1,6 +1,6 @@
 using System;
 
-namespace Proyecto_del_analizador_léxico
+namespace Proyecto_del_analizador_léxico.src.analizadorTokens
 {
     class Rutas
     {
