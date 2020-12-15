@@ -4,7 +4,6 @@ namespace Proyecto_del_analizador_léxico
 {
     class Rutas
     {
-
         private string path;
         private String Nombre;
 

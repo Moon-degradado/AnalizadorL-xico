@@ -10,7 +10,6 @@ namespace Proyecto_del_analizador_léxico
     {
         ArrayList tokens;
         ArrayList tipos;
-
         ArrayList Lista_Operaciones;
         static private List<Token> listaTokens;
         public List<Lineas_Ejecutar> lin_ejecutar;

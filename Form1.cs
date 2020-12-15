@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_del_analizador_léxico.src.analizadorLenguaje;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,7 +58,8 @@ namespace Proyecto_del_analizador_léxico
                 "]", "Listado Tokens");
             }
 
-
+            Lenguaje mensaje = new Lenguaje();
+            MessageBox.Show(mensaje.bueno, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void guardarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -154,7 +156,6 @@ namespace Proyecto_del_analizador_léxico
                 Path_actual = ruta1;
                 nombre_acual = nombreC;
                 this.Text = nombre_acual;
-
             }
 
         }
@@ -237,6 +238,6 @@ namespace Proyecto_del_analizador_léxico
         {
             this.b_correr_Click(sender, e);
         }
-
     }
 }
+

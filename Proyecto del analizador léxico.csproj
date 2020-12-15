@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="src\" />
     <Folder Include="pages\" />
+    <Folder Include="src\analizadorLexemas\" />
   </ItemGroup>
 
   <ItemGroup>

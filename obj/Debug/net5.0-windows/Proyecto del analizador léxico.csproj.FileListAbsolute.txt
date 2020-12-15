@@ -15,5 +15,5 @@ C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\ob
 C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.pdb
 C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.genruntimeconfig.cache
 C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto del analizador léxico.csproj.GenerateResource.cache
-C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto_del_analizador_léxico.Form1.resources
 C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto_del_analizador_léxico.Properties.Resources.resources
+C:\Users\User\Documents\Lenguajes y Automatas\Proyecto del analizador léxico\obj\Debug\net5.0-windows\Proyecto_del_analizador_léxico.Form1.resources
