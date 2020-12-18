@@ -70,8 +70,10 @@ namespace Proyecto_del_analizador_léxico
             mensaje.reacomodarCadena();
             mensaje.asignacion(fila[1]);
             mensaje.reacomodarCadena();
-            mensaje.asignacion(fila[2]);
-            mensaje.reacomodarCadena(); 
+            mensaje.asignacion(fila[2],2);
+            mensaje.reacomodarCadena();
+            mensaje.asignacion(fila[3],3);//Asignar suma
+            mensaje.reacomodarCadena();
         }
 
         private void guardarToolStripMenuItem1_Click(object sender, EventArgs e)
