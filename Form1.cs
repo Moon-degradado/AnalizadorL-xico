@@ -14,8 +14,8 @@ using System.Windows.Forms;
 
     /* 
         Autores: 
-        
-        Jahaziel Esaú Luna Hernández #17480583 
+
+        Jahaziel Esaú Luna Hernández #17480862
 
         Alfonso Ramos Chávez #17481367 
 
@@ -44,7 +44,7 @@ namespace Proyecto_del_analizador_léxico
 
         private void b_correr_Click(object sender, EventArgs e)
         {
-             String texto = richTextBox1.Text;
+            String texto = richTextBox1.Text;
             Analizador analiz = new Analizador();
             analiz.Analizador_cadena(texto);
 
@@ -54,7 +54,7 @@ namespace Proyecto_del_analizador_léxico
 
             lis_toks = new List<Token>();
             lis_toks = analiz.getListaTokens();
-           
+            //Lenguaje
             string dato = richTextBox1.Text;     
             fila = dato.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
             Lenguaje mensaje = new Lenguaje();
@@ -67,7 +67,7 @@ namespace Proyecto_del_analizador_léxico
                 }
                 else
                 {
-                    mensaje.asignacion(fila[i],i);//Asignar suma
+                    mensaje.asignacion(fila[i],i);//Asignar operador
                     mensaje.reacomodarCadena();
                 }
             }

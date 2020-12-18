@@ -69,7 +69,8 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
                 // Limpiador de basura en el arreglo
                 //
                 this.recoleccion[i] += null;
-            }
+            } 
+            
         }
 
         public void reacomodoImpresion()
@@ -82,6 +83,7 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
                 //
                 this.recoleccion[i] += null;
             }
+            
         }
 
         public void reacomodarCadena()
@@ -108,17 +110,17 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
                 if (this.recoleccion.Length > 2 && (this.recoleccion[3].Contains(digito[0])==true || this.recoleccion[3].Contains(digito[1])==true || this.recoleccion[3].Contains(digito[2])==true || this.recoleccion[3].Contains(digito[3])==true || this.recoleccion[3].Contains(digito[4])==true || this.recoleccion[3].Contains(digito[5])==true || this.recoleccion[3].Contains(digito[6])==true || this.recoleccion[3].Contains(digito[7])==true || this.recoleccion[3].Contains(digito[8])==true || this.recoleccion[3].Contains(digito[9])==true)&& (this.recoleccion[3].Contains(";")==true))
                 {
                     //reacomodo();
-                    if (this.recoleccion[1]==identificador[0])
+                    if (this.recoleccion[1] == identificador[0])
                     {
                         asignacionPrimeraVariable();
                     }
-                    else if((this.recoleccion[1]==identificador[1]))
+                    else if((this.recoleccion[1] == identificador[1]))
                     {
                         asignacionSegundaVariable();
                     } 
                     
                 }
-                 
+                 // Asignamos cadena
                 else if (this.recoleccion.Length > 2 && puntoComa2=="'';")
                 {
 

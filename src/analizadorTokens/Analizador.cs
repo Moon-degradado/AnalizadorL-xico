@@ -16,8 +16,6 @@ namespace Proyecto_del_analizador_léxico.src.analizadorTokens
         public List<Graficas_Ejecutar> graf_ejecutar;
         private String retorno;
         public int estado_token;
-
-        //errores tokens
         static private List<ErroresToken> listaErrores;
 
         public Analizador()
