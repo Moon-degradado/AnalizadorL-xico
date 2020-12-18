@@ -31,7 +31,7 @@ namespace Proyecto_del_analizador_léxico
 
         private void b_correr_Click(object sender, EventArgs e)
         {
-            String texto = richTextBox1.Text;
+             String texto = richTextBox1.Text;
             Analizador analiz = new Analizador();
             analiz.Analizador_cadena(texto);
 
@@ -41,7 +41,7 @@ namespace Proyecto_del_analizador_léxico
 
             lis_toks = new List<Token>();
             lis_toks = analiz.getListaTokens();
-
+            /*
             for (int i = 0; i < lis_toks.Count; i++)
             {
                 Token actual = lis_toks.ElementAt(i);
@@ -60,7 +60,18 @@ namespace Proyecto_del_analizador_léxico
             }
 
             Lenguaje mensaje = new Lenguaje();
-            MessageBox.Show(mensaje.bueno, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje.bueno, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information); */
+            string dato = richTextBox1.Text;
+            string [] fila;
+            //fila = dato.Split(Encoding.ASCII.GetBytes(dato)[0]==13);            
+            fila = dato.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
+            Lenguaje mensaje = new Lenguaje();
+            mensaje.asignacion(fila[0]);
+            mensaje.reacomodarCadena();
+            mensaje.asignacion(fila[1]);
+            mensaje.reacomodarCadena();
+            mensaje.asignacion(fila[2]);
+            mensaje.reacomodarCadena(); 
         }
 
         private void guardarToolStripMenuItem1_Click(object sender, EventArgs e)
