@@ -21,7 +21,7 @@ namespace Proyecto_del_analizador_léxico
 
         public String Path_actual;
         public String nombre_acual;
-
+        public string [] fila;
         static private List<Token> lis_toks;
         public Form1()
         {
@@ -41,39 +41,23 @@ namespace Proyecto_del_analizador_léxico
 
             lis_toks = new List<Token>();
             lis_toks = analiz.getListaTokens();
-            /*
-            for (int i = 0; i < lis_toks.Count; i++)
-            {
-                Token actual = lis_toks.ElementAt(i);
-                String mensajeRespuesta = null;
-                if (actual.getLexema() != null)
-                {
-                    mensajeRespuesta = "[Lexema: " + actual.getLexema();
-                }
-                if (actual.getIdToken() != null)
-                {
-                    mensajeRespuesta += ", Token: " + actual.getIdToken();
-                }
-                MessageBox.Show(mensajeRespuesta +
-                ", Linea: " + actual.getLinea() +
-                "]", "Listado Tokens");
-            }
-
-            Lenguaje mensaje = new Lenguaje();
-            MessageBox.Show(mensaje.bueno, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information); */
-            string dato = richTextBox1.Text;
-            string [] fila;
-            //fila = dato.Split(Encoding.ASCII.GetBytes(dato)[0]==13);            
+           
+            string dato = richTextBox1.Text;     
             fila = dato.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
             Lenguaje mensaje = new Lenguaje();
-            mensaje.asignacion(fila[0]);
-            mensaje.reacomodarCadena();
-            mensaje.asignacion(fila[1]);
-            mensaje.reacomodarCadena();
-            mensaje.asignacion(fila[2],2);
-            mensaje.reacomodarCadena();
-            mensaje.asignacion(fila[3],3);//Asignar suma
-            mensaje.reacomodarCadena();
+            for (var i = 0; i < fila.Length; i++)
+            {
+                if (i==0 || i==1)
+                {
+                    mensaje.asignacion(fila[i]);
+                    mensaje.reacomodarCadena();
+                }
+                else
+                {
+                    mensaje.asignacion(fila[i],i);//Asignar suma
+                    mensaje.reacomodarCadena();
+                }
+            }
         }
 
         private void guardarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -195,32 +179,45 @@ namespace Proyecto_del_analizador_léxico
             sintaxis = recopilar.Split(" ");
             if (richTextBox1.Text != "")
             {
+                 
                 if (richTextBox1.SelectionColor == Color.Black)
                 {
-                    foreach (var palabrasReservadas in sintaxis)
+                    if(button2.Text == "Quitar Color")
                     {
-                        switch (palabrasReservadas)
+                        foreach (var palabrasReservadas in sintaxis)
                         {
-                            case "nose2":
-                            case "nose3":
-                                HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 232, 198));
-                                button2.Text = "Quitar Color";
-                                break;
+                            switch (palabrasReservadas)
+                            {
+                                case "=":
+                                case ";":
+                                case "+":
+                                case "-":
+                                case "/":
+                                case "*":
+                                case "Node":
+                                    HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 0, 0));
+                                    button2.Text = "Colorear Sintaxis";
+                                    break;;
+                            }
                         }
-
                     }
-                }
-                else
-                {
-                    foreach (var palabrasReservadas in sintaxis)
+                    else
                     {
-                        switch (palabrasReservadas)
+                        foreach (var palabrasReservadas in sintaxis)
                         {
-                            case "nose2":
-                            case "nose3":
-                                HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 0, 0));
-                                button2.Text = "Colorear Sintaxis";
-                                break;
+                            switch (palabrasReservadas)
+                            {
+                                case "=":
+                                case ";":
+                                case "+":
+                                case "-":
+                                case "/":
+                                case "*":
+                                case "Node":
+                                    HighlightPhrase(richTextBox1, palabrasReservadas, Color.FromArgb(0, 232, 198));
+                                    button2.Text = "Quitar Color";
+                                    break;
+                            }
                         }
                     }
                 }

@@ -9,7 +9,7 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
         public string datoCadena = "nombres";
         public string [] palabraReservada = {"node","Node","Resultado"};
         public string [] digito = {"0","1","2","3","4","5","6","7","8","9"};
-        public static string [] identificador = {"node1","node2", "node3", "valorSuma"};
+        public static string [] identificador = {"asignacion1","asignacion2", "asignacion3", "valorSuma"};
         public static string [] asignacionesAlmacenadas;
         public static string operadorSuma,operadorResta,operadorMultiplicacion,operadorDivision;
         public int contador = 0;
@@ -89,7 +89,7 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
             //
             //  Imprimir dato
             //
-            if (this.recoleccion[0].Equals("Result"))
+            if (this.recoleccion[0].Equals("Resultado"))
             {
                 reacomodoImpresion();
                 //enviarMensaje(this.recoleccion[1]);
@@ -116,11 +116,7 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
                     {
                         asignacionSegundaVariable();
                     } 
-                    else
-                    {
-                        //enviarMensaje("No se ha asignado una variable a imprimir");
-                        
-                    }
+                    
                 }
                  
                 else if (this.recoleccion.Length > 2 && puntoComa2=="'';")
