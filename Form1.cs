@@ -12,6 +12,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+    /* 
+        Autores: 
+        
+        Jahaziel Esaú Luna Hernández #17480583 
+
+        Alfonso Ramos Chávez #17481367 
+
+        Amanda Santillana Díaz #17480766 
+
+        Alexis Rangel Urdiales #17481307 
+
+        Mario Antonio Rodríguez Gloria #17480513 
+    */
+
 namespace Proyecto_del_analizador_léxico
 {
 
