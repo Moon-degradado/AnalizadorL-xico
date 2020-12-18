@@ -18,7 +18,6 @@ namespace Proyecto_del_analizador_léxico
     public partial class Form1 : Form
     {
         static private List<Rutas> rutas;
-
         public String Path_actual;
         public String nombre_acual;
         public string [] fila;
