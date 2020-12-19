@@ -129,6 +129,18 @@ namespace Proyecto_del_analizador_léxico.src.analizadorTokens
                             addToken(lexema, "parDer", fila, columna, i - lexema.Length);
                             lexema = "";
                         }
+                        else if(c == Convert.ToChar("'"))
+                        {
+                            lexema += c;
+                            addToken(lexema, "Cadena", fila, columna, i - lexema.Length);
+                            lexema = "";
+                        }
+                        else if(c == '=')
+                        {
+                            lexema += c;
+                            addToken(lexema, "Igual", fila, columna, i - lexema.Length);
+                            lexema = "";
+                        }
                         else if (c == ',')
                         {
                             lexema += c;
@@ -190,7 +202,6 @@ namespace Proyecto_del_analizador_léxico.src.analizadorTokens
                             lexema = "";
                         }
 
-
                         /*fin operadors mat*/
                         else
                         {
@@ -214,9 +225,16 @@ namespace Proyecto_del_analizador_léxico.src.analizadorTokens
                             {
                                 addToken(lexema, "Reservada", fila, columna, i - lexema.Length);
                             }
-                            else
+                            else 
                             {
-                                addToken(lexema, "Identificador", fila, columna, i - lexema.Length);
+                                if((lexema== "asignacion1" || lexema == "asignacion2" || lexema == "asignacion3" || lexema == "valorSuma"))
+                                {
+                                    addToken(lexema, "Identificador", fila, columna, i - lexema.Length);
+                                }
+                                else if((lexema!= "asignacion1" || lexema != "asignacion2" || lexema != "asignacion3" || lexema != "valorSuma"))
+                                {
+                                    addToken(lexema, "Cadena", fila, columna, i - lexema.Length);
+                                }
                             }
                             lexema = "";
                             i--;
