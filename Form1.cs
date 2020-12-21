@@ -44,32 +44,43 @@ namespace Proyecto_del_analizador_léxico
 
         private void b_correr_Click(object sender, EventArgs e)
         {
-            String texto = richTextBox1.Text;
-            Analizador analiz = new Analizador();
-            analiz.Analizador_cadena(texto);
-
-            analiz.generarLista();
-            comen.Text = analiz.getRetorno();
-
-
-            lis_toks = new List<Token>();
-            lis_toks = analiz.getListaTokens();
             //Lenguaje
             string dato = richTextBox1.Text;     
             fila = dato.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
+            identificadores creacionIdentificador = new identificadores();
+            
+            Analizador analiz = new Analizador();
+            
             Lenguaje mensaje = new Lenguaje();
+
+            for (var i = 0; i < fila.Length; i++)
+            {
+                creacionIdentificador.recogerAsignacion(fila[i]);
+                creacionIdentificador.identificadoresAsignacion(i);
+            }
+            
             for (var i = 0; i < fila.Length; i++)
             {
                 if (i==0 || i==1)
                 {
                     mensaje.asignacion(fila[i]);
+                    
                     mensaje.reacomodarCadena();
                 }
                 else
                 {
                     mensaje.asignacion(fila[i],i);//Asignar operador
+                    
                     mensaje.reacomodarCadena();
                 }
+                analiz.Analizador_cadena(dato);
+                analiz.generarLista();
+                comen.Text = analiz.getRetorno();
+
+
+                lis_toks = new List<Token>();
+                lis_toks = analiz.getListaTokens();
+
             }
         }
 

@@ -1,3 +1,4 @@
+using Proyecto_del_analizador_léxico.src.analizadorLenguaje;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 
 namespace Proyecto_del_analizador_léxico.src.analizadorTokens
 {
-    class Analizador
+    class Analizador:identificadores
     {
         ArrayList tokens;
         ArrayList tipos;
@@ -227,7 +228,7 @@ namespace Proyecto_del_analizador_léxico.src.analizadorTokens
                             }
                             else 
                             {
-                                if((lexema== "asignacion1" || lexema == "asignacion2" || lexema == "asignacion3" || lexema == "valorSuma"))
+                                if((lexema== recoleccionIdentificador[0] || lexema == recoleccionIdentificador[1] || lexema == recoleccionIdentificador[2] || lexema == recoleccionIdentificador[3]))
                                 {
                                     addToken(lexema, "Identificador", fila, columna, i - lexema.Length);
                                 }

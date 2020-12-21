@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
 {
-    public class Lenguaje
+    public class Lenguaje: identificadores
     {
         public string puntoComa = ";";
         public string datoCadena = "nombres";
         public string [] palabraReservada = {"node","Node","Resultado"};
         public string [] digito = {"0","1","2","3","4","5","6","7","8","9"};
-        public static string [] identificador = {"asignacion1","asignacion2", "asignacion3", "valorSuma"};
+        public static string [] identificador = recoleccionIdentificador;
         public static string [] asignacionesAlmacenadas;
         public static string operadorSuma,operadorResta,operadorMultiplicacion,operadorDivision;
         public int contador = 0;
@@ -53,11 +53,6 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
                     decisionOperador = "multiplicacion";
                 }
             }
-        }
-
-        public void enviarMensaje(string info)
-        {
-            MessageBox.Show(info,"Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         public void reacomodo()
@@ -129,7 +124,7 @@ namespace Proyecto_del_analizador_léxico.src.analizadorLenguaje
                         this.recoleccion[3] = this.recoleccion[3].Replace("'","").Replace(";","");
                         asignacionPrimeraVariable();
                     }
-                    else if((this.recoleccion[1]==identificador[1]))
+                    else if(this.recoleccion[1]==identificador[1])
                     {
                         this.recoleccion[3] = this.recoleccion[3].Replace("'","").Replace(";","");
                         asignacionSegundaVariable();
